@@ -26,7 +26,7 @@ export default function PersonalDetails(props) {
           onChange={handleInputChange}
           value={props.personalInfo.fullName}
           isRequired={true}
-          labelText="Full Name:"
+          labelText="Full Name"
         />
         <InputGroup
           name="email"
@@ -35,7 +35,7 @@ export default function PersonalDetails(props) {
           onChange={handleInputChange}
           value={props.personalInfo.email}
           isRequired={false}
-          labelText="Email:"
+          labelText="Email"
         />
         <InputGroup
           name="phone"
@@ -44,7 +44,7 @@ export default function PersonalDetails(props) {
           onChange={handleInputChange}
           value={props.personalInfo.phone}
           isRequired={false}
-          labelText="Phone Number:"
+          labelText="Phone Number"
         />
         <InputGroup
           name="address"
@@ -53,7 +53,7 @@ export default function PersonalDetails(props) {
           onChange={handleInputChange}
           value={props.personalInfo.address}
           isRequired={false}
-          labelText="Address:"
+          labelText="Address"
         />
       </div>
     </>
