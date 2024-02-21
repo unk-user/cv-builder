@@ -8,6 +8,7 @@ export default function EducationDetails({
   toggleSection,
   selectedSection,
   openForm,
+  setOpenForm,
 }) {
   return (
     <div className="education-container">
@@ -20,10 +21,10 @@ export default function EducationDetails({
             <CreateForm
               type={openForm.type}
               item={openForm.item}
-              dataList={openForm.dataList}
+              dataList={schoolList}
               setList={openForm.setList}
               openForm={openForm}
-              setOpenForm={openForm.setOpenForm}
+              setOpenForm={setOpenForm}
             />
           ) : (
             schoolList.map((school, index) => {
@@ -51,4 +52,5 @@ EducationDetails.propTypes = {
   toggleSection: propTypes.func,
   selectedSection: propTypes.string,
   openForm: propTypes.object,
+  setOpenForm: propTypes.func,
 };

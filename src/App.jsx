@@ -31,10 +31,7 @@ function App() {
       isOpen: !openForm.isOpen,
       type: 'education',
       item: schoolList[e.target.id],
-      dataList: schoolList,
       setList: setSchoolList,
-      openForm: openForm,
-      setOpenForm: setOpenForm,
     })
   }
 
