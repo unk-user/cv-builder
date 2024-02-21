@@ -30,8 +30,7 @@ function App() {
     setOpenForm({
       isOpen: !openForm.isOpen,
       type: 'education',
-      item: schoolList[e.target.id],
-      setList: setSchoolList,
+      item: schoolList[e.target.id]
     })
   }
 
@@ -50,6 +49,7 @@ function App() {
         />
         <EducationDetails 
           schoolList={schoolList}
+          setSchoolList={setSchoolList}
           toggleForm={toggleForm}
           toggleSection={toggleSection}
           selectedSection={selectedSection}

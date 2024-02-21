@@ -4,6 +4,7 @@ import CreateForm from '../components/createForm';
 
 export default function EducationDetails({
   schoolList,
+  setSchoolList,
   toggleForm,
   toggleSection,
   selectedSection,
@@ -21,8 +22,8 @@ export default function EducationDetails({
             <CreateForm
               type={openForm.type}
               item={openForm.item}
-              dataList={schoolList}
-              setList={openForm.setList}
+              schoolList={schoolList}
+              setSchoolList={setSchoolList}
               openForm={openForm}
               setOpenForm={setOpenForm}
             />
@@ -48,6 +49,7 @@ export default function EducationDetails({
 
 EducationDetails.propTypes = {
   schoolList: propTypes.array,
+  setSchoolList: propTypes.func,
   toggleForm: propTypes.func,
   toggleSection: propTypes.func,
   selectedSection: propTypes.string,

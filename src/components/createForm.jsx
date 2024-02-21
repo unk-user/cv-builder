@@ -5,8 +5,8 @@ import Button from './button';
 export default function CreateForm({
   type,
   item = null,
-  dataList,
-  setList,
+  schoolList,
+  setSchoolList,
   openForm,
   setOpenForm,
 }) {
@@ -34,13 +34,13 @@ export default function CreateForm({
       } else if (item !== null) {
         toggleForm();
       } else if (item === null) {
-        setList([...dataList, school]);
+        setSchoolList([...schoolList, school]);
         toggleForm();
       }
     };
     const cancelSchool = () => {
       if (item !== null) {
-        setList([...dataList, item]);
+        setSchoolList([...schoolList, item]);
         toggleForm();
       } else {
         toggleForm();
@@ -50,23 +50,23 @@ export default function CreateForm({
       if (item === null) {
         toggleForm();
       } else {
-        const updatedList = dataList.filter(
+        const updatedList = schoolList.filter(
           (schoolItem) => schoolItem !== item
         );
-        setList(updatedList);
+        setSchoolList(updatedList);
         toggleForm();
       }
     };
 
     const handleInputChange = (e) => {
       if (item !== null) {
-        setList([
-          ...dataList,
-          {
-            ...item,
-            [e.target.name]: e.target.value,
-          },
-        ]);
+        const updatedItem = {
+          ...item,
+          [e.target.name]: e.target.value
+        };
+        const updatedList = schoolList.map(data => data === item ? updatedItem : data);
+        setSchoolList(updatedList);
+        console.log('Updated list:', updatedList);
       }
     };
 
@@ -135,8 +135,8 @@ export default function CreateForm({
 CreateForm.propTypes = {
   type: propTypes.string,
   item: propTypes.object,
-  setList: propTypes.func,
-  dataList: propTypes.array,
+  setSchoolList: propTypes.func,
+  schoolList: propTypes.array,
   openForm: propTypes.object,
   setOpenForm: propTypes.func
 };
