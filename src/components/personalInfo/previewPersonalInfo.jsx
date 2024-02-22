@@ -9,15 +9,15 @@ export default function PreviewPersonalInfo({ personalInfo }) {
       <h1>{personalInfo.fullName}</h1>
       <div>
         <span className='contact-info'>
-          <img src={phoneIcon}/>
+          {personalInfo.address != '' && <img src={mailIcon}/>}
           <p>{personalInfo.email}</p>
         </span>
         <span className='contact-info'>
-          <img src={mailIcon}/>
+          {personalInfo.address != '' && <img src={phoneIcon}/>}
           <p>{personalInfo.phone}</p>
         </span>
         <span className='contact-info'>
-          <img src={addressIcon}/>
+          {personalInfo.address != '' && <img src={addressIcon}/>}
           <p>{personalInfo.address}</p>
         </span>
       </div>

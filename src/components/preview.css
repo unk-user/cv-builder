@@ -3,7 +3,7 @@
   aspect-ratio: 1/1.41;
   width: 100vmin;
   padding: 45px 40px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.244);
+  background-color: white;
 }
 header {
   margin-bottom: 20px;

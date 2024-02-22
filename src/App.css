@@ -1,0 +1,54 @@
+.info-container {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  min-width: 450px;
+}
+
+.personal-details-container{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.education-container, .experience-container {
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.education-edit-section, .experience-edit-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.personal-details-container > label, .education-edit-section > label, .experience-edit-section > label {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  box-sizing: border-box;
+  padding: 20px 15px;
+  margin: auto;
+  width: 100%;
+  border-top: 5px solid rgb(235, 236, 255);
+}
+
+.expand-section{
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.add-btn-container {
+  width: calc(100% + 30px);
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 5px solid rgb(235, 236, 255);
+}

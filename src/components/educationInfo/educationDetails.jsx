@@ -28,7 +28,7 @@ export default function EducationDetails({
         Education
       </div>
       {selectedSection === 'education' && (
-        <div className="school-section">
+        <div className="education-edit-section">
           {openForm.isOpen ? (
             <CreateEducationForm
               schoolList={schoolList}
@@ -50,7 +50,7 @@ export default function EducationDetails({
                   </div>
                 );
               })}
-              <div>
+              <div className='add-btn-container'>
                 <Button id='newSchool' className='newItem' onClick={toggleForm} name='Add School'/>
               </div>
             </>

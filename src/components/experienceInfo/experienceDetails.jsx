@@ -23,12 +23,12 @@ export default function ExperienceDetails({
   };
 
   return (
-    <div className="education-container">
+    <div className="experience-container">
       <div className="expand-section" id="experience" onClick={toggleSection}>
         Experience
       </div>
       {selectedSection === 'experience' && (
-        <div className="experience-section">
+        <div className="experience-edit-section">
           {openForm.isOpen ? (
             <CreateExperienceForm
               experienceList={experienceList}
@@ -50,7 +50,7 @@ export default function ExperienceDetails({
                   </div>
                 );
               })}
-              <div>
+              <div className='add-btn-container'>
                 <Button id='newExperience' className='newItem' onClick={toggleForm} name='Add Experience'/>
               </div>
             </>

@@ -11,14 +11,8 @@ export default function PersonalDetails(props) {
 
   return (
     <>
-      <h2>Personal Details</h2>
-      <div
-        className="personal-details-container"
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
+      <div className="personal-details-container">
+        Personal Details
         <InputGroup
           name="fullName"
           id="fullNameInput"

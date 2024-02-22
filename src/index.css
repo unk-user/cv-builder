@@ -5,6 +5,7 @@ body {
   font-family: Roboto;
   padding: 10px;
   font-size: 18px;
+  background-color: rgb(235, 236, 255);
 }
 
 #root {
