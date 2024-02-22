@@ -1,16 +1,26 @@
 import propTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import CreateForm from '../components/createForm';
+import CreateEducationForm from './createEducationForm';
+import { useState } from 'react';
 
 export default function EducationDetails({
   schoolList,
   setSchoolList,
-  toggleForm,
   toggleSection,
   selectedSection,
-  openForm,
-  setOpenForm,
 }) {
+  const [openForm, setOpenForm] = useState({
+    isOpen: false,
+    item: null,
+  });
+
+  const toggleForm = (e) => {
+    setOpenForm({
+      isOpen: !openForm.isOpen,
+      itemId: e.target.id,
+    });
+  };
+
   return (
     <div className="education-container">
       <div className="expand-section" id="education" onClick={toggleSection}>
@@ -19,9 +29,7 @@ export default function EducationDetails({
       {selectedSection === 'education' && (
         <div className="school-section">
           {openForm.isOpen ? (
-            <CreateForm
-              type={openForm.type}
-              item={openForm.item}
+            <CreateEducationForm
               schoolList={schoolList}
               setSchoolList={setSchoolList}
               openForm={openForm}
@@ -50,9 +58,6 @@ export default function EducationDetails({
 EducationDetails.propTypes = {
   schoolList: propTypes.array,
   setSchoolList: propTypes.func,
-  toggleForm: propTypes.func,
   toggleSection: propTypes.func,
   selectedSection: propTypes.string,
-  openForm: propTypes.object,
-  setOpenForm: propTypes.func,
 };

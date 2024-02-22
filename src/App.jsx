@@ -19,20 +19,16 @@ function App() {
       endDate: '',
       location: '',
     },
+    {
+      schoolName: 'heygy hey',
+      degree: 'hohoh',
+      startDate: '',
+      endDate: '',
+      location: '',
+    },
   ]);
   const [selectedSection, selectSection] = useState(null);
-  const [openForm, setOpenForm] = useState({
-    isOpen: false,
-    arguments: null
-  })
-
-  const toggleForm = e => {
-    setOpenForm({
-      isOpen: !openForm.isOpen,
-      type: 'education',
-      item: schoolList[e.target.id]
-    })
-  }
+  
 
   const toggleSection = e => {
     selectSection(
@@ -50,10 +46,8 @@ function App() {
         <EducationDetails 
           schoolList={schoolList}
           setSchoolList={setSchoolList}
-          toggleForm={toggleForm}
           toggleSection={toggleSection}
           selectedSection={selectedSection}
-          openForm={openForm}
         />
       </div>
       <Preview personalInfo={personalInfo}/>
