@@ -1,0 +1,84 @@
+.preview-page {
+  box-sizing: border-box;
+  aspect-ratio: 1/1.41;
+  width: 100vmin;
+  padding: 45px 40px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.244);
+}
+header {
+  margin-bottom: 20px;
+}
+header > div { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+}
+.contact-info {
+  display: inline-flex;
+  gap: 5px;
+}
+header > h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+header > div  p {
+  margin: 5px 0;
+  font-size: 0.8em;
+}
+
+.section-header {
+  font-size: 1.4em;
+  margin: 10px 0;
+  padding: 3px;
+  background-color: rgba(128, 128, 128, 0.553);
+}
+
+.education-section, .experience-section {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.section-info-container {
+  display: flex;
+  gap: 12px;
+}
+.education-section {
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+.education-info-group, .experience-info-group {
+  padding-bottom: 10px;
+}
+.section-info-container p {
+  margin: 5px 0;
+  position: relative;
+}
+
+.left-group {
+  min-width: 200px;
+  border-right: 1px solid rgba(0, 0, 0, 0.463);
+}
+
+.education-degree, .experience-position {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.education-date::after,.experience-date ::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  transform: translate(50%, 50%);
+  
+}
+
+.experience-description {
+  max-width: calc(100% - 200px);
+  word-wrap: break-word;
+}

@@ -1,6 +1,6 @@
-import InputGroup from '../components/inputGroup';
+import InputGroup from '../inputGroup';
 import propTypes from 'prop-types';
-import Button from '../components/button';
+import Button from '../button';
 import { useState } from 'react';
 
 export default function CreateEducationForm({
@@ -31,15 +31,14 @@ export default function CreateEducationForm({
     if (school.schoolName === '') {
       alert("School Name shouldn't be empty");
     } else if (openForm.itemId !== 'newSchool') {
-      setSchoolList(schoolList.map((item, index) => {
-        return String(index) === openForm.itemId ? school : item;
-      }));
+      setSchoolList(
+        schoolList.map((item, index) => {
+          return String(index) === openForm.itemId ? school : item;
+        })
+      );
       toggleForm();
     } else if (openForm.itemId === 'newSchool') {
-      setSchoolList({
-        ...schoolList,
-        school,
-      })
+      setSchoolList([...schoolList, school]);
       toggleForm();
     }
   };
@@ -48,20 +47,20 @@ export default function CreateEducationForm({
     if (openForm.itemId === 'newSchool') {
       toggleForm();
     } else {
-      setSchoolList(schoolList.filter((_, index) => {
-        return String(index) !== openForm.itemId
-      }));
+      setSchoolList(
+        schoolList.filter((_, index) => {
+          return String(index) !== openForm.itemId;
+        })
+      );
       toggleForm();
     }
   };
 
   const handleInputChange = (e) => {
-    if (openForm.itemId !== 'newSchool') {
-      setSchool({
-        ...school,
-        [e.target.name]: e.target.value,
-      });
-    }
+    setSchool({
+      ...school,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (

@@ -1,6 +1,7 @@
 import propTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import CreateEducationForm from './createEducationForm';
+import Button from '../button';
 import { useState } from 'react';
 
 export default function EducationDetails({
@@ -36,18 +37,23 @@ export default function EducationDetails({
               setOpenForm={setOpenForm}
             />
           ) : (
-            schoolList.map((school, index) => {
-              return (
-                <div
-                  className="school-item"
-                  id={index}
-                  onClick={toggleForm}
-                  key={uuidv4}
-                >
-                  {school.schoolName}
-                </div>
-              );
-            })
+            <>
+              {schoolList.map((school, index) => {
+                return (
+                  <div
+                    className="list-item"
+                    id={index}
+                    onClick={toggleForm}
+                    key={uuidv4}
+                  >
+                    {school.schoolName}
+                  </div>
+                );
+              })}
+              <div>
+                <Button id='newSchool' className='newItem' onClick={toggleForm} name='Add School'/>
+              </div>
+            </>
           )}
         </div>
       )}
