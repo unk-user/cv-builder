@@ -64,7 +64,7 @@ export default function CreateEducationForm({
   };
 
   return (
-    <>
+    <div className="form-container">
       <InputGroup
         name="schoolName"
         id="school-name-input"
@@ -89,7 +89,7 @@ export default function CreateEducationForm({
         name="startDate"
         id="start-date-input"
         type="text"
-        labelText="Start Date"
+        labelText="Start date"
         onChange={handleInputChange}
         value={school.startDate}
         isRequired={false}
@@ -99,7 +99,7 @@ export default function CreateEducationForm({
         name="endDate"
         id="end-Date-input"
         type="text"
-        labelText="End Date"
+        labelText="End date"
         onChange={handleInputChange}
         value={school.endDate}
         isRequired={false}
@@ -120,7 +120,7 @@ export default function CreateEducationForm({
         <Button className="cancel-btn" name="Cancel" onClick={toggleForm} />
         <Button className="save-btn" name="Save" onClick={saveSchool} />
       </div>
-    </>
+    </div>
   );
 }
 

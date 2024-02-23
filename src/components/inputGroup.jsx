@@ -20,6 +20,7 @@ export default function InputGroup({
           id={id}
           value={value}
           onChange={onChange}
+          className='form-input'
           {...(isRequired ? { required: true } : {})}
         ></textarea>
       ) : (
@@ -29,6 +30,7 @@ export default function InputGroup({
           id={id}
           value={value}
           onChange={onChange}
+          className='form-input'
           {...(isRequired ? { required: true } : {})}
         />
       )}

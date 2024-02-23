@@ -28,7 +28,7 @@ export default function EducationDetails({
         Education
       </div>
       {selectedSection === 'education' && (
-        <div className="education-edit-section">
+        <div className="education-details-container">
           {openForm.isOpen ? (
             <CreateEducationForm
               schoolList={schoolList}

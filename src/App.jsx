@@ -18,33 +18,40 @@ function App() {
     console.log(selectedSection)
   };
   const reset = () => {
-    setPersonalInfo({});
+    setPersonalInfo({
+      fullName: '',
+      phone: '',
+      email: '',
+      address: '',
+    });
     setExperienceList([]);
     setSchoolList([]);
   }
 
   return (
     <>
-      <div className="edit-bar">
-        <Button name='reset' onClick={reset} className='reset-btn'/>
-      </div>
-      <div className="info-container">
-        <PersonalDetails
-          personalInfo={personalInfo}
-          setPersonalInfo={setPersonalInfo}
-        />
-        <EducationDetails
-          schoolList={schoolList}
-          setSchoolList={setSchoolList}
-          toggleSection={toggleSection}
-          selectedSection={selectedSection}
-        />
-        <ExperienceDetails
-          experienceList={experienceList}
-          setExperienceList={setExperienceList}
-          toggleSection={toggleSection}
-          selectedSection={selectedSection}
-        />
+      <div className="left-section">
+        <div className="edit-bar">
+          <Button name='reset' onClick={reset} className='reset-btn'/>
+        </div>
+        <div className="info-container">
+          <PersonalDetails
+            personalInfo={personalInfo}
+            setPersonalInfo={setPersonalInfo}
+          />
+          <EducationDetails
+            schoolList={schoolList}
+            setSchoolList={setSchoolList}
+            toggleSection={toggleSection}
+            selectedSection={selectedSection}
+          />
+          <ExperienceDetails
+            experienceList={experienceList}
+            setExperienceList={setExperienceList}
+            toggleSection={toggleSection}
+            selectedSection={selectedSection}
+          />
+        </div>
       </div>
       <Preview 
         personalInfo={personalInfo}

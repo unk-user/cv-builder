@@ -65,7 +65,7 @@ export default function CreateExperienceForm({
   };
 
   return (
-    <>
+    <div className="form-container">
       <InputGroup
         name="companyName"
         id="stage-name-input"
@@ -90,7 +90,7 @@ export default function CreateExperienceForm({
         name="startDate"
         id="start-date-input"
         type="text"
-        labelText="Start Date"
+        labelText="Start date"
         onChange={handleInputChange}
         value={stage.startDate}
         isRequired={false}
@@ -100,7 +100,7 @@ export default function CreateExperienceForm({
         name="endDate"
         id="end-Date-input"
         type="text"
-        labelText="End Date"
+        labelText="End date"
         onChange={handleInputChange}
         value={stage.endDate}
         isRequired={false}
@@ -132,7 +132,7 @@ export default function CreateExperienceForm({
         <Button className="cancel-btn" name="Cancel" onClick={toggleForm} />
         <Button className="save-btn" name="Save" onClick={saveStage} />
       </div>
-    </>
+    </div>
   );
 }
 

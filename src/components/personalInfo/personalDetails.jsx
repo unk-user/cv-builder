@@ -10,9 +10,9 @@ export default function PersonalDetails(props) {
   };
 
   return (
-    <>
-      <div className="personal-details-container">
-        Personal Details
+    <div className="personal-container">
+      <div className="expand-section">Personal Info</div>
+      <div className="form-container">
         <InputGroup
           name="fullName"
           id="fullNameInput"
@@ -20,7 +20,7 @@ export default function PersonalDetails(props) {
           onChange={handleInputChange}
           value={props.personalInfo.fullName}
           isRequired={true}
-          labelText="Full Name"
+          labelText="Full name"
         />
         <InputGroup
           name="email"
@@ -38,7 +38,7 @@ export default function PersonalDetails(props) {
           onChange={handleInputChange}
           value={props.personalInfo.phone}
           isRequired={false}
-          labelText="Phone Number"
+          labelText="Phone number"
         />
         <InputGroup
           name="address"
@@ -50,6 +50,6 @@ export default function PersonalDetails(props) {
           labelText="Address"
         />
       </div>
-    </>
+    </div>
   );
 }

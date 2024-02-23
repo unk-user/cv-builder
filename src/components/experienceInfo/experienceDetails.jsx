@@ -28,7 +28,7 @@ export default function ExperienceDetails({
         Experience
       </div>
       {selectedSection === 'experience' && (
-        <div className="experience-edit-section">
+        <div className="experience-details-container">
           {openForm.isOpen ? (
             <CreateExperienceForm
               experienceList={experienceList}

@@ -5,29 +5,40 @@
   min-width: 450px;
 }
 
-.personal-details-container{
+.experience-details-container, .education-details-container{
   display: flex;
   flex-direction: column;
-  padding: 15px;
   border-radius: 10px;
   box-sizing: border-box;
   background-color: white;
 }
 
-.education-container, .experience-container {
+.education-container, .experience-container, .personal-container {
   border-radius: 10px;
   box-sizing: border-box;
   background-color: white;
 }
-
-.education-edit-section, .experience-edit-section {
-  display: flex;
-  flex-direction: column;
+.form-container {
+  padding: 0 16px 20px 16px;
+  box-sizing: border-box;
 }
-
-.personal-details-container > label, .education-edit-section > label, .experience-edit-section > label {
+.form-container > label {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
+}
+.form-input {
+  width: 100%;
+  height: 30px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  align-self: center;
+  background-color: var(--background-color);
+  transition: border-color 250ms ease-in;
+}
+.form-input:focus {
+  border: 2px solid rgb(142, 142, 255);
+  outline: none;
 }
 
 .list-item {
@@ -35,20 +46,42 @@
   padding: 20px 15px;
   margin: auto;
   width: 100%;
-  border-top: 5px solid rgb(235, 236, 255);
+  border-top: 5px solid var(--background-color);
 }
 
 .expand-section{
+  font-size: 1.5em;
   padding: 20px 15px;
   display: flex;
   align-items: center;
 }
 
 .add-btn-container {
-  width: calc(100% + 30px);
+  width: 100%;
   padding: 20px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 5px solid rgb(235, 236, 255);
+  border-top:  5px solid var(--background-color);
+}
+
+.labelText {
+  margin-bottom: 4px;
+}
+.edit-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.newItem {
+  background-color: white;
+  font-size: 1.2rem;
+  width: 170px;
+  height: 40px;
+  border-radius: 10px;
+  border: 4px solid var(--background-color);
+}
+.newItem:focus {
+  outline: none;
 }
