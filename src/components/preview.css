@@ -49,6 +49,7 @@ header > div  p {
 }
 .education-info-group, .experience-info-group {
   padding-bottom: 10px;
+  max-width: none;
 }
 .section-info-container p {
   margin: 5px 0;
@@ -79,6 +80,4 @@ header > div  p {
 }
 
 .experience-description {
-  max-width: calc(100% - 200px);
-  word-wrap: break-word;
 }
