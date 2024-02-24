@@ -6,17 +6,33 @@
 }
 
 .experience-details-container, .education-details-container{
-  display: flex;
   flex-direction: column;
   border-radius: 10px;
   box-sizing: border-box;
   background-color: white;
+  transform: translateY(-50px);
+  position: absolute;
+  transition: transform, visibility, opacity;
+  transition-duration: 250ms;
+  opacity: 0;
+  min-width: 450px;
+  z-index: 1;
+  visibility: hidden;
+  transform-origin: top;
+}
+.experience-details-container.open, .education-details-container .open {
+  display: flex;
+  transform: translateY(0);
+  position: relative;
+  visibility: visible;
+  opacity: 1;
 }
 
 .education-container, .experience-container, .personal-container {
   border-radius: 10px;
   box-sizing: border-box;
   background-color: white;
+  position: relative;
 }
 .form-container {
   padding: 0 16px 20px 16px;
@@ -29,7 +45,7 @@
 }
 .form-input {
   width: 100%;
-  height: 30px;
+  height: 35px;
   border-radius: 8px;
   border: 2px solid transparent;
   align-self: center;
@@ -51,9 +67,14 @@
 
 .expand-section{
   font-size: 1.5em;
+  position: relative;
   padding: 20px 15px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
+  z-index: 2;
+  background-color: white;
+  box-sizing: border-box;
 }
 
 .add-btn-container {

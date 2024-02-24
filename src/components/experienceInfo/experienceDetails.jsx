@@ -27,36 +27,44 @@ export default function ExperienceDetails({
       <div className="expand-section" id="experience" onClick={toggleSection}>
         Experience
       </div>
-      {selectedSection === 'experience' && (
-        <div className="experience-details-container">
-          {openForm.isOpen ? (
-            <CreateExperienceForm
-              experienceList={experienceList}
-              setExperienceList={setExperienceList}
-              openForm={openForm}
-              setOpenForm={setOpenForm}
-            />
-          ) : (
-            <>
-              {experienceList.map((stage, index) => {
-                return (
-                  <div
-                    className="list-item"
-                    id={index}
-                    onClick={toggleForm}
-                    key={uuidv4}
-                  >
-                    {stage.companyName}
-                  </div>
-                );
-              })}
-              <div className='add-btn-container'>
-                <Button id='newExperience' className='newItem' onClick={toggleForm} name='Add Experience'/>
-              </div>
-            </>
-          )}
-        </div>
-      )}
+      <div
+        className={
+          'experience-details-container' + (selectedSection === 'experience' ?
+          ' open' : '')
+        }
+      >
+        {openForm.isOpen ? (
+          <CreateExperienceForm
+            experienceList={experienceList}
+            setExperienceList={setExperienceList}
+            openForm={openForm}
+            setOpenForm={setOpenForm}
+          />
+        ) : (
+          <>
+            {experienceList.map((stage, index) => {
+              return (
+                <div
+                  className="list-item"
+                  id={index}
+                  onClick={toggleForm}
+                  key={uuidv4}
+                >
+                  {stage.companyName}
+                </div>
+              );
+            })}
+            <div className="add-btn-container">
+              <Button
+                id="newExperience"
+                className="newItem"
+                onClick={toggleForm}
+                name="Add Experience"
+              />
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }

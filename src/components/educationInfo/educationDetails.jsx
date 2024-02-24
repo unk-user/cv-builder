@@ -27,36 +27,44 @@ export default function EducationDetails({
       <div className="expand-section" id="education" onClick={toggleSection}>
         Education
       </div>
-      {selectedSection === 'education' && (
-        <div className="education-details-container">
-          {openForm.isOpen ? (
-            <CreateEducationForm
-              schoolList={schoolList}
-              setSchoolList={setSchoolList}
-              openForm={openForm}
-              setOpenForm={setOpenForm}
-            />
-          ) : (
-            <>
-              {schoolList.map((school, index) => {
-                return (
-                  <div
-                    className="list-item"
-                    id={index}
-                    onClick={toggleForm}
-                    key={uuidv4}
-                  >
-                    {school.schoolName}
-                  </div>
-                );
-              })}
-              <div className='add-btn-container'>
-                <Button id='newSchool' className='newItem' onClick={toggleForm} name='Add School'/>
-              </div>
-            </>
-          )}
-        </div>
-      )}
+      <div
+        className={
+          'experience-details-container' +
+          (selectedSection === 'education' ? ' open' : '')
+        }
+      >
+        {openForm.isOpen ? (
+          <CreateEducationForm
+            schoolList={schoolList}
+            setSchoolList={setSchoolList}
+            openForm={openForm}
+            setOpenForm={setOpenForm}
+          />
+        ) : (
+          <>
+            {schoolList.map((school, index) => {
+              return (
+                <div
+                  className="list-item"
+                  id={index}
+                  onClick={toggleForm}
+                  key={uuidv4}
+                >
+                  {school.schoolName}
+                </div>
+              );
+            })}
+            <div className="add-btn-container">
+              <Button
+                id="newSchool"
+                className="newItem"
+                onClick={toggleForm}
+                name="Add School"
+              />
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }
